@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RimJev privacy policy</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6; max-width: 46rem; margin: 2rem auto; padding: 0 1.25rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+    h2 { font-size: 1.2rem; margin-top: 2rem; }
+    .updated { opacity: 0.7; margin-top: 0; }
+    li { margin-bottom: 0.4rem; }
+    code { font-size: 0.95em; }
+  </style>
+</head>
+<body>
+  <h1>RimJev privacy policy</h1>
+  <p class="updated">Last updated: September 26, 2026</p>
+
+  <p>RimJev is a free, unofficial mod for RimWorld that lets TypeSafe AI's Jev model manage a colony. It is made by Dreadarm and is not affiliated with or endorsed by TypeSafe AI or Ludeon Studios. This page explains what information RimJev sends, where it goes and what it stores on your computer.</p>
+
+  <h2>Summary</h2>
+  <ul>
+    <li>The mod's author does not collect, receive or store any of your information. RimJev has no analytics or telemetry, and it contacts no server other than the Jev endpoint in its settings.</li>
+    <li>RimJev sends nothing until you set an API key.</li>
+    <li>Once a key is set, RimJev sends details of your colony and colonists directly from your game to TypeSafe AI's API, using your own API key. TypeSafe's handling of that information is covered by <a href="https://typesafe.ai/legal/privacy-policy">TypeSafe's privacy policy</a>.</li>
+    <li>Jev is a separate paid service. TypeSafe may charge you for each request RimJev sends.</li>
+  </ul>
+
+  <h2>What RimJev sends</h2>
+  <p>RimJev sends game information and your API key. It sends nothing about you, your computer or your Steam account, apart from what you typed into the game yourself, such as colonist names. Like any internet connection, each request also reveals your IP address to the server that receives it.</p>
+  <ul>
+    <li><strong>Reviews</strong> (every 24 in-game hours by default, or when you click <em>Review now</em>). For each colonist Jev manages: their name, age, whether they are a slave, skills and passions, traits, health, mood, mental state, addictions, the work they cannot do, and their current work priorities, schedule, medical care and policies. When attacks are managed, reviews also ask Jev to plan each colonist's area, response to enemies and apparel policy for attacks. Each question about a kind of work also lists up to eight other colonists assigned to that work, with their priority and skill, including colonists Jev does not manage.</li>
+    <li><strong>Reviews, about the colony:</strong> the names of your apparel, drug and food policies, the names and sizes of your areas, and colony statistics: number of colonists, season, outdoor temperature, stored food and medicine, threats, fires in the home area, how much of each kind of work is waiting, and the current research project.</li>
+    <li><strong>Research</strong> (when nothing is being researched): the names, descriptions and costs of up to 40 projects that can be started.</li>
+    <li><strong>Attacks</strong> (when enemies attack a map). For each colonist Jev manages on that map: their name, age, health, injuries, sight, moving and manipulation, weapon, shooting and melee skills, traits, worn apparel, whether they are drafted or in a mental state, the names and sizes of your areas, and the names of your apparel policies. Each request also describes the attack: how many enemies there are, their factions and kinds, how many have ranged or melee weapons, any hostile structures such as turrets, how close the nearest enemy is to the colony and to the colonist, and how many colonists are on the map and how many of them can fight.</li>
+    <li><strong>Test connection</strong> sends one short request with no colony data.</li>
+  </ul>
+  <p>Colonist names are sent as they appear in the game. If you named colonists after real people, those names are sent.</p>
+
+  <h2>How often</h2>
+  <p>Each review sends at most one request per managed colonist, plus one for research when nothing is being researched. With the default 24-hour interval, a colony of 10 managed colonists sends at most 11 review requests per in-game day. Each attack sends at most one more request per managed colonist on the attacked map, at most four at a time. A review or attack request that fails because of a network error, a timeout, a rate limit or a server error is retried up to three times; a retry after a timeout may be billed even if the server finished the first attempt. <em>Test connection</em> is never retried. Dry run changes nothing in your game, but still sends requests.</p>
+
+  <h2>Where it goes</h2>
+  <p>By default, everything goes to TypeSafe's API at <code>api.typesafe.ai</code> over HTTPS, authenticated with your API key. If you change the endpoint setting to another server, your data and your API key are sent to that server instead, and the settings window warns you about it. The endpoint must use HTTPS, and redirects are never followed.</p>
+
+  <h2>What is stored on your computer</h2>
+  <ul>
+    <li>A key typed into the mod settings is stored in plain text in RimWorld's config folder, like every mod setting. To avoid that, leave the field empty and set the <code>TYPESAFE_API_KEY</code> environment variable instead.</li>
+    <li>Your save files hold the latest Jev report, the attack plans and the settings to put back after an attack.</li>
+    <li>With <em>Verbose logging</em> on, every review and attack request, and every successful response to one, is written in full to RimWorld's log file. The API key is never logged.</li>
+  </ul>
+
+  <h2>Your choices</h2>
+  <ul>
+    <li>Leave the API key empty and RimJev sends nothing.</li>
+    <li>Choose what Jev manages in <em>Options &gt; Mod settings &gt; RimJev</em>, and turn Jev off for individual colonists with the <em>Jev manages this colonist</em> toggle. Colonists Jev does not manage are never described in detail, but may be listed by name, priority and skill in work questions, as described above.</li>
+    <li>Disable or unsubscribe from the mod at any time. Information already sent is handled under TypeSafe's privacy policy.</li>
+  </ul>
+
+  <h2>Steam</h2>
+  <p>RimJev is distributed through the Steam Workshop, which is run by Valve. Subscribing to the mod and using Steam are covered by <a href="https://store.steampowered.com/privacy_agreement/">Valve's privacy policy</a>.</p>
+
+  <h2>Changes</h2>
+  <p>If what RimJev sends changes, this page is updated and its date changes.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy can be posted on the mod's <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3808492971">Steam Workshop page</a>.</p>
+</body>
+</html>
